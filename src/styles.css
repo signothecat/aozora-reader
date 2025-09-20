@@ -210,3 +210,9 @@ span.size-24 {
   color: #323131;
   font-variation-settings: "OPSZ" 24, "wght" 600;
 }
+
+/* その他 */
+
+.pointer {
+  cursor: pointer;
+}
