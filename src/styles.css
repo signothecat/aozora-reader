@@ -14,7 +14,7 @@ header {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); /* 下方向に影を追加 */
 }
 
-#header-container {
+.header-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -42,14 +42,14 @@ header {
   height: 40px;
 }
 
-#header-navigation {
+.header-navigation {
   display: flex;
   align-items: center; /* 上下中央揃え */
   height: 45px;
   margin-right: 18px;
 }
 
-#header-navigation a {
+.header-navigation a {
   width: 5em;
   height: 43px;
   padding-top: 2px;
@@ -62,12 +62,12 @@ header {
   transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
 }
 
-#header-navigation a:hover {
+.header-navigation a:hover {
   color: #33556a;
   border-bottom: solid 2px lightskyblue;
 }
 
-#viewer-controls {
+.viewer-controls {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -76,43 +76,43 @@ header {
   background-color: #baddf3;
 }
 
-#controller-container {
+.controller-container {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
 
-#controller-container > div {
+.controller-container > div {
   display: flex;
   align-items: center; /* 上下中央揃え */
   gap: 3px; /* ラベルとスライダーの余白 */
   margin-right: 10px;
 }
 
-#controller-container > #line-height-container {
+.controller-container > .line-height-container {
   flex: 2;
   max-width: 300px;
 }
 
-#controller-container > #padding-container {
+.controller-container > .padding-container {
   flex: 3;
   max-width: 400px;
 }
 
-#controller-container label {
+.controller-container label {
   width: 2em;
 }
 
-#controller-container span {
+.controller-container span {
   margin-right: 3px;
 }
 
-#controller-container input {
+.controller-container input {
   flex: 1;
 }
 
-button#toggle-direction {
+button.toggle-direction {
   display: flex;
   align-items: center; /* 上下中央揃え */
   justify-content: center; /* 左右中央揃え */
@@ -123,7 +123,7 @@ button#toggle-direction {
   border-radius: 8px;
 }
 
-button#toggle-nightmode {
+button.toggle-nightmode {
   display: flex;
   align-items: center; /* 上下中央揃え */
   justify-content: center; /* 左右中央揃え */
@@ -142,10 +142,10 @@ body {
   background-color: #f4f3ef;
 }
 
-#novel-container {
+.novel-container {
   font-size: 16px;
 }
-#novel-container p {
+.novel-container p {
   font-size: 1em;
 }
 
@@ -178,16 +178,16 @@ main.vertical {
   padding-right: 5em;
 }
 
-#novel-container h1 {
+.novel-container h1 {
   margin-block-end: 3em;
 }
 
-#novel-container h2 {
+.novel-container h2 {
   margin-block-start: 3em;
   margin-block-end: 3em;
 }
 
-#novel-container h3 {
+.novel-container h3 {
   margin-block-start: 3em;
   margin-block-end: 3em;
   text-indent: 3em;

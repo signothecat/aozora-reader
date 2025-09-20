@@ -1,9 +1,9 @@
 // /src/viewer-controls.js
 document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("toggle-direction");
-  const novel = document.getElementById("novel-container");
-  const range = document.getElementById("padding-control");
-  const valueEl = document.getElementById("padding-value");
+  const btn = document.getElementById("toggleDirection");
+  const novel = document.getElementById("novelContainer");
+  const range = document.getElementById("paddingControl");
+  const valueEl = document.getElementById("paddingValue");
 
   function updateValue(v) {
     valueEl.textContent = `${v}%`;

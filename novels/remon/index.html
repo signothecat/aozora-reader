@@ -13,7 +13,7 @@
   </head>
   <body>
     <header>
-      <div id="header-container">
+      <div id="headerContainer" class="header-container">
         <h1 class="site-title">
           <a href="/index.html">
             <img
@@ -24,20 +24,20 @@
             青空文庫デモ
           </a>
         </h1>
-        <nav id="header-navigation">
+        <nav id="headerNavigation" class="header-navigation">
           <a class="header-nav__item" href="/index.html">HOME</a>
           <a class="header-nav__item" href="/about.html">ABOUT</a>
           <a class="header-nav__item" href="/test.html">TEST</a>
         </nav>
       </div>
-      <div id="viewer-controls">
-        <div id="controller-container">
-          <div id="line-height-container">
-            <label for="line-height-control">行間</label>
-            <span id="line-height-value">1.8</span>
+      <div id="viewerControls" class="viewer-controls">
+        <div id="controllerContainer" class="controller-container">
+          <div id="lineHeightContainer" class="line-height-container">
+            <label for="lineHeightControl">行間</label>
+            <span id="lineHeightValue">1.8</span>
             <input
               type="range"
-              id="line-height-control"
+              id="lineHeightControl"
               class="pointer"
               min="1.0"
               max="3.0"
@@ -45,12 +45,12 @@
               step="0.2"
             />
           </div>
-          <div id="padding-container">
-            <label for="padding-control">余白</label>
-            <span id="padding-value">10%</span>
+          <div id="paddingContainer" class="padding-container">
+            <label for="paddingControl">余白</label>
+            <span id="paddingValue">10%</span>
             <input
               type="range"
-              id="padding-control"
+              id="paddingControl"
               class="pointer"
               min="0"
               max="40"
@@ -59,20 +59,28 @@
             />
           </div>
         </div>
-        <div id="direction-container">
-          <button id="toggle-direction" class="pointer" aria-pressed="false">
+        <div id="directionContainer">
+          <button
+            id="toggleDirection"
+            class="toggle-direction pointer"
+            aria-pressed="false"
+          >
             縦書き：オフ
           </button>
         </div>
-        <div id="nightmode-container">
-          <button id="toggle-nightmode" class="pointer" aria-pressed="false">
+        <div id="nightmodeContainer">
+          <button
+            id="toggleNightmode"
+            class="toggle-nightmode pointer"
+            aria-pressed="false"
+          >
             <span class="material-symbols-rounded size-24">contrast</span>
           </button>
         </div>
       </div>
     </header>
 
-    <main id="novel-container">
+    <main id="novelContainer" class="novel-container">
       <p>本文を読み込み中...</p>
     </main>
 

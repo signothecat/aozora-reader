@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>
-      <div id="header-container">
+      <div id="headerContainer" class="header-container">
         <h1 class="site-title">
           <a href="/index.html">
             <img
@@ -19,7 +19,7 @@
             青空文庫デモ
           </a>
         </h1>
-        <nav id="header-navigation">
+        <nav id="headerNavigation" class="header-navigation">
           <a class="header-nav__item" href="/index.html">HOME</a>
           <a class="header-nav__item" href="/about.html">ABOUT</a>
           <a class="header-nav__item" href="/test.html">TEST</a>
@@ -41,13 +41,4 @@
       </ul>
     </main>
   </body>
-  <script>
-    // カレント表示
-    const links = document.querySelectorAll(".header-nav__item");
-    links.forEach((targetLink) => {
-      if (targetLink.href === location.href) {
-        targetLink.classList.add("is-current");
-      }
-    });
-  </script>
 </html>

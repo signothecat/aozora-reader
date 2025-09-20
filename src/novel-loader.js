@@ -3,7 +3,7 @@
 // Markdown先頭の見出し(#...)を<title>に反映（作品名 - 著者 形式）
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const container = document.getElementById("novel-container");
+  const container = document.getElementById("novelContainer");
 
   // URLをslugに変換(例:/novels/remon/→remon)
   const m = location.pathname.match(/\/novels\/([^\/]+)/);
