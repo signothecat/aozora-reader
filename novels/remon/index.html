@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>青空文庫デモ - リーダー</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=contrast"
+    />
+  </head>
+  <body>
+    <header>
+      <div id="header-container">
+        <h1 class="site-title">
+          <a href="/index.html">
+            <img
+              src="/assets/images/icon.png"
+              alt="サイトアイコン"
+              class="site-icon"
+            />
+            青空文庫デモ
+          </a>
+        </h1>
+        <nav id="header-navigation">
+          <a class="header-nav__item" href="/index.html">HOME</a>
+          <a class="header-nav__item" href="/about.html">ABOUT</a>
+          <a class="header-nav__item" href="/test.html">TEST</a>
+        </nav>
+      </div>
+      <div id="viewer-controls">
+        <div id="controller-container">
+          <div id="line-height-container">
+            <label for="line-height-control">行間</label>
+            <span id="line-height-value">1.8</span>
+            <input
+              type="range"
+              id="line-height-control"
+              min="1.0"
+              max="3.0"
+              value="1.8"
+              step="0.2"
+            />
+          </div>
+          <div id="padding-container">
+            <label for="padding-control">余白</label>
+            <span id="padding-value">10%</span>
+            <input
+              type="range"
+              id="padding-control"
+              min="0"
+              max="40"
+              value="10"
+              step="1"
+            />
+          </div>
+        </div>
+        <div id="direction-container">
+          <button id="toggle-direction" aria-pressed="false">
+            縦書き：オフ
+          </button>
+        </div>
+        <div id="nightmode-container">
+          <button id="toggle-nightmode" aria-pressed="false">
+            <span class="material-symbols-rounded size-24">contrast</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="novel-container">
+      <p>本文を読み込み中...</p>
+    </main>
+
+    <!-- 本文読み込み -->
+    <script src="/src/md-to-html.js"></script>
+    <script src="/src/novel-loader.js"></script>
+
+    <!-- ビューワーコントローラーの動作 -->
+    <script>
+      const btn = document.getElementById("toggle-direction");
+      const novel = document.getElementById("novel-container");
+      const range = document.getElementById("padding-control");
+      const valueEl = document.getElementById("padding-value");
+
+      function updateValue(v) {
+        valueEl.textContent = `${v}%`;
+        range.setAttribute("aria-valuenow", String(v));
+        range.setAttribute("aria-valuetext", `${v}%`);
+      }
+
+      // 余白コントローラーの動作
+      function applyMargin() {
+        const v = Number(range.value); // e.g. 35 -> 35%
+        if (novel.classList.contains("vertical")) {
+          // 縦書きの場合は上下だけ変更
+          novel.style.paddingTop = v + "%";
+          novel.style.paddingBottom = v + "%";
+          novel.style.paddingLeft = "";
+          novel.style.paddingRight = "";
+        } else {
+          // 横書きの場合は左右だけ変更
+          novel.style.paddingLeft = v + "%";
+          novel.style.paddingRight = v + "%";
+          novel.style.paddingTop = "";
+          novel.style.paddingBottom = "";
+        }
+        updateValue(v);
+      }
+
+      // 縦書きトグルボタンの動作
+      btn.addEventListener("click", () => {
+        const vertical = novel.classList.toggle("vertical");
+        btn.setAttribute("aria-pressed", String(vertical));
+        btn.textContent = vertical ? "縦書き：オン" : "縦書き：オフ";
+        applyMargin(); //マージン再適用
+      });
+
+      range.addEventListener("input", applyMargin);
+
+      // 初期化
+      applyMargin();
+    </script>
+  </body>
+</html>

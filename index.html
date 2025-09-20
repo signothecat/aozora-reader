@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>青空文庫デモ</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div id="header-container">
+        <h1 class="site-title">
+          <a href="/index.html">
+            <img
+              src="/assets/images/icon.png"
+              alt="サイトアイコン"
+              class="site-icon"
+            />
+            青空文庫デモ
+          </a>
+        </h1>
+        <nav id="header-navigation">
+          <a class="header-nav__item" href="/index.html">HOME</a>
+          <a class="header-nav__item" href="/about.html">ABOUT</a>
+          <a class="header-nav__item" href="/test.html">TEST</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <h2>HOME</h2>
+      <ul>
+        <li>
+          <a href="/novels/kokoro/index.html">こころ（夏目漱石）</a>
+        </li>
+        <li>
+          <a href="/novels/remon/index.html">檸檬（梶井基次郎）</a>
+        </li>
+        <li>
+          <a href="/novels/ningen-shikkaku/index.html">人間失格（太宰治）</a>
+        </li>
+      </ul>
+    </main>
+  </body>
+  <script>
+    // カレント表示
+    const links = document.querySelectorAll(".header-nav__item");
+    links.forEach((targetLink) => {
+      if (targetLink.href === location.href) {
+        targetLink.classList.add("is-current");
+      }
+    });
+  </script>
+</html>
