@@ -5,6 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const novel = document.getElementById("novelContainer");
   const range = document.getElementById("paddingControl");
   const valueEl = document.getElementById("paddingValue");
+  const root = document.documentElement;
+
+  // 初期テーマをブラウザのpreferenceに合わせる
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    root.setAttribute("data-theme", "dark");
+  } else {
+    root.removeAttribute("data-theme");
+  }
 
   function updateValue(v) {
     valueEl.textContent = `${v}%`;
@@ -33,9 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // テーマトグルボタンの動作
   toggleThemeBtn.addEventListener("click", () => {
-    const root = document.documentElement;
     const isDark = root.getAttribute("data-theme") === "dark";
-
     if (isDark) {
       root.removeAttribute("data-theme"); // デフォルトに戻す
     } else {

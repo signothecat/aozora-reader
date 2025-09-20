@@ -6,6 +6,7 @@
 :root {
   --color-bg: #edeae5;
   --color-text: #262020;
+  --color-link-text: #0071d1;
   --color-border: #878789;
   --color-btn: #edeae5;
   --color-btn-hover: #d7d9d9;
@@ -21,6 +22,7 @@
 :root[data-theme="dark"] {
   --color-bg: #2b2b2a;
   --color-text: #dbd9d7;
+  --color-link-text: #59a5e7;
   --color-border: #7c7d7e;
   --color-btn: #363737;
   --color-btn-hover: #555556;
@@ -38,7 +40,7 @@
 
 a,
 a:visited {
-  color: #0071d1;
+  color: var(--color-link-text);
 }
 
 header {
@@ -54,17 +56,21 @@ header {
   align-items: center;
   padding: 0 10px;
   font-family: serif;
+  gap: 6px;
 }
 
 .site-title {
+  display: flex;
+  align-items: center; /* 上下中央揃え */
   margin: 0;
-  padding: 5px 10px;
-  height: 46px;
+  height: 54px;
   color: var(--color-header-text);
 }
 
 .site-title a {
-  font-size: 28px;
+  height: 100%;
+  padding: 0 10px;
+  font-size: 24px;
   font-weight: normal;
   display: inline-flex;
   align-items: center; /* 上下中央揃え */
@@ -74,7 +80,7 @@ header {
 }
 
 .site-icon {
-  height: 36px;
+  height: 32px;
 }
 
 .header-navigation {
@@ -82,6 +88,7 @@ header {
   align-items: center; /* 上下中央揃え */
   height: 45px;
   margin-right: 18px;
+  font-weight: 600;
 }
 
 .header-navigation a {
