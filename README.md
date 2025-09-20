@@ -1,8 +1,9 @@
 # aozora-reader
 
-青空文庫のリーダー  
+HTML・CSS・JavaScript で制作した青空文庫のリーダー
 
 ## Demo
+
 Vercel 👉 [https://aozora-reader-phi.vercel.app/](https://aozora-reader-phi.vercel.app/)
 
 ## Feature
