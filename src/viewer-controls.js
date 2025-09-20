@@ -1,6 +1,7 @@
 // /src/viewer-controls.js
 document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("toggleDirection");
+  const toggleDirectionBtn = document.getElementById("toggleDirection");
+  const toggleThemeBtn = document.getElementById("toggleTheme");
   const novel = document.getElementById("novelContainer");
   const range = document.getElementById("paddingControl");
   const valueEl = document.getElementById("paddingValue");
@@ -30,11 +31,23 @@ document.addEventListener("DOMContentLoaded", () => {
     updateValue(v);
   }
 
+  // テーマトグルボタンの動作
+  toggleThemeBtn.addEventListener("click", () => {
+    const root = document.documentElement;
+    const isDark = root.getAttribute("data-theme") === "dark";
+
+    if (isDark) {
+      root.removeAttribute("data-theme"); // デフォルトに戻す
+    } else {
+      root.setAttribute("data-theme", "dark");
+    }
+  });
+
   // 縦書きトグルボタンの動作
-  btn.addEventListener("click", () => {
+  toggleDirectionBtn.addEventListener("click", () => {
     const vertical = novel.classList.toggle("vertical");
-    btn.setAttribute("aria-pressed", String(vertical));
-    btn.textContent = vertical ? "縦書き：オン" : "縦書き：オフ";
+    toggleDirectionBtn.setAttribute("aria-pressed", String(vertical));
+    toggleDirectionBtn.textContent = vertical ? "縦書き：オン" : "縦書き：オフ";
     applyMargin(); //マージン再適用
   });
 
