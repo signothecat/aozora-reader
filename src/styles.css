@@ -8,6 +8,7 @@
   --color-text: #262020;
   --color-border: #878789;
   --color-btn: #edeae5;
+  --color-btn-hover: #d7d9d9;
   --color-header-bg: #edeae5;
   --color-header-text: #161616;
   --color-header-text-hover: #626972;
@@ -22,11 +23,12 @@
   --color-text: #dbd9d7;
   --color-border: #7c7d7e;
   --color-btn: #363737;
+  --color-btn-hover: #555556;
   --color-header-bg: #2b2b2a;
   --color-header-text: #f0f0f0;
   --color-header-text-hover: #788088;
   --color-header-border: #579ab7;
-  --color-header-controller-bg: #404142;
+  --color-header-controller-bg: #3b4449;
   color-scheme: dark;
 }
 
@@ -68,7 +70,7 @@ header {
   align-items: center; /* 上下中央揃え */
   text-decoration: none; /* 下線を消す */
   color: inherit; /* 親の色を継承 */
-  gap: 5px;
+  gap: 7px; /* ロゴと文字の間 */
 }
 
 .site-icon {
@@ -105,7 +107,7 @@ header {
   justify-content: flex-end;
   align-items: center;
   padding: 5px 18px;
-  gap: 5px;
+  gap: 7px;
   background-color: var(--color-header-controller-bg);
 }
 
@@ -138,7 +140,7 @@ header {
 }
 
 .controller-container span {
-  margin-right: 3px;
+  margin-right: 6px;
 }
 
 .controller-container input {
@@ -167,6 +169,11 @@ button.toggle-theme {
   background-color: var(--color-btn);
   border: 1px solid var(--color-border);
   border-radius: 8px;
+}
+
+button.toggle-direction:hover,
+button.toggle-theme:hover {
+  background-color: var(--color-btn-hover);
 }
 
 body {
